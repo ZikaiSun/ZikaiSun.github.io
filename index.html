@@ -8,6 +8,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Personal Homepage for Zikai Sun.">
   	<link rel="stylesheet" media="all" href="./css/style.css">
+		<link rel="stylesheet" href="./css/project.css" media="all">
+
 </head>
 
 <body data-spy="scroll" data-target="#resumeNavigationScrollSpy" data-offset="70" >
@@ -78,7 +80,8 @@
 	<!-- end Header Area -->
 
 	<div class="container-fluid">
-            <!-- col1 -->
+
+	    <!-- col1 -->
             <div class="col-xs-12 col-sm-3">
 
 							<div id="resumeNavigationScrollSpy">
@@ -115,6 +118,7 @@
             <div class="col-xs-12 col-sm-9 resume-info padding-top-condition">
                 <section class="resume-info-section" style="color:#585754;">
                     <h2 id="Biography">Biography</h2>
+
                     <p >I am Zikai Sun, born in November 1998. I majored in Information Engineering (the Honors Class) in <a href="https://www.scut.edu.cn/new/">South China University of Technology</a>. I am currently a fourth-year undergraduate student.</p>
                     <p >I am highly fortunate to be advised by <a href="http://www.hcii-lab.net/lianwen/">Professor Lianwen Jin</a>. Under his advise, I've done some research in deep learning algorithms and have published two papers.</p>
                     <p >I will continue my research as a Ph.D student at <a href="http://www.cuhk.edu.hk/">the Chinese University of Hong Kong</a> since september 2019.</p>
@@ -131,9 +135,13 @@
                 <section class="resume-info-section" style="color:#585754;">
                     <h2 id="Publications">Publications</h2>
 
+
+
+
+
                     <div class="resume-info-section-block highlight">
                         <p>
-                        [1] <span style="font-weight: bold; color: black;">Zikai Sun</span>, Dezhi Peng, Zirui Cai, Zirong Chen, Lianwen Jin <q>Scale Mapping and Dynamic Re-detecting in Dense Head Detection</q>, In 2018 25th IEEE International Conference on Image Processing (ICIP) (pp. 1902-1906). IEEE.
+                        [1] <span style="font-weight: bold; color: black;">Zikai Sun</span>, Dezhi Peng, Zirui Cai, Zirong Chen, Lianwen Jin <q>Scale Mapping and Dynamic Re-detecting in Dense Head Detection</q>, In 2018 25th IEEE International Conference on Image Processing (ICIP) (pp. 1902 - 1906). IEEE.
                         <a href="./files/Scale_Mapping_ICIP.pdf">PDF</a>
                         <!--a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8451653">Paper</a-->
                         </p>
@@ -243,26 +251,51 @@
 						</div><!--//timeline-->
 					 </div>
 				</section>
+
+
                 <section class="resume-info-section" style="color:#585754;">
                     <h2 id="Projects">Projects</h2>
                     <div class="resume-info-section-block">
-                      <p>
-                        <a href="http://zikaisun.github.io/project1"><big><big>Facial expression DIY Software</big></big></a><br>
-                        - An android-based and weixin-based application combined the method of Generative Adversarial Networks. <br>
-                      </p>
-
-                      <p>
-                        <a href="http://zikaisun.github.io/project2"><big><big>Hexapod Simulation Robot</big></big></a><br>
-                        - A Hexapod Simulation Robot made from scratch that realized Tripod gait walk algorithm<br>
-                      </p>
-
-                      <p>
-                        <a href="http://zikaisun.github.io/underbuild"><big><big>Search engine website</big></big></a><br>
-                        - A whole-network search engine that realized by python and Flask framework.<br>
-                      </p>
 
 
-                    </div>
+
+											<div class="project-toggle" id="proj1-toggle">Facial expression DIY Software</div>
+											<div class="project-intro">- An android-based and weixin-based application combined the method of Generative Adversarial Networks.</div>
+											<div class="project-wrapper" id="proj1">
+												<button class="btn--search-close" aria-label="Close search form"><i class="icon-close"></i></button>
+
+												<div class="proj-cols">
+													<div class="proj-col">
+														<video class="project1-video" src="./files/project1.mp4" controls="controls"></video>
+													</div>
+													<div class="proj-col">
+														//Facial DIY software demo// <br>
+														- An android-based and weixin-based application combined the method of Generative Adversarial Networks.
+														<a href="http://zikaisun.github.io/project1">  ...details</a>
+													</div>
+												</div>
+
+											</div>
+
+
+										<div class="project-toggle" id="proj2-toggle">Hexapod Simulation Robot</div>
+										<div class="project-intro">- A Hexapod Simulation Robot made from scratch that realized Tripod gait walk algorithm</div>
+										<div class="project-wrapper" id="proj2">
+											<button class="btn--search-close" aria-label="Close search form"><i class="icon-close"></i></button>
+											Underconstruction...<br>
+											<a href="http://zikaisun.github.io/project1">  ...details</a>
+										</div>
+
+										<div class="project-toggle" id="proj3-toggle">Search engine website</div>
+										<div class="project-intro">- A whole-network search engine that realized by python and Flask framework.</div>
+										<div class="project-wrapper" id="proj3">
+											<button class="btn--search-close" aria-label="Close search form"><i class="icon-close"></i></button>
+											Underconstruction...<br>
+											<a href="http://zikaisun.github.io/project1">  ...details</a>
+										</div>
+
+
+                </div>
 
                 </section>
                 <section class="resume-info-section" style="color:#585754;">
@@ -304,6 +337,8 @@
   	<script type="text/javascript" src="./js/app.js"></script>
 	<script src="./js/jquery-1.11.2.min.js"></script>
 	<script src="./js/script.js"></script>
+
+
 
     <!-- /Javscript -->
 
