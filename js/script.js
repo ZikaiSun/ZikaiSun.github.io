@@ -21,18 +21,28 @@
   });
 
 
+    function projectToggle() {
+      $("#proj1-toggle").click(function() {
+        $('#proj1').addClass('open');
+      });
+      $("#proj2-toggle").click(function() {
+        $('#proj2').addClass('open');
+      });
+      $("#proj3-toggle").click(function() {
+        $('#proj3').addClass('open');
+      });
+      
+      $(".btn--search-close").click(function() {
+        $('.project-wrapper').removeClass('open');
+      });
+    }
+
 
   $(function(){
       $('a').click(function(){
           $('html,body').animate({scrollTop: ($($(this).attr('href')).offset().top-95 )},500,'swing');
       });
   });
-
-
-
-
-
-
 
 
   function midInView () {
@@ -54,7 +64,7 @@
   // soft refresh, so as to not load the page & have the
   // focus point be reset to the top of the document
   midInView();
-
+  projectToggle();
 
 /*
   Various things should animate into view on scrolling on certain
