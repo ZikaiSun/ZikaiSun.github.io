@@ -20,7 +20,7 @@ text-transform:none;speak:none;
 -webkit-font-smoothing:antialiased;
 -moz-osx-font-smoothing:grayscale}
 
-.icon-close:before{content:'\e90d'}
+
 
 
 
@@ -96,22 +96,27 @@ transform:translate3d(15px,15px,0)}
 .project-wrapper.open{pointer-events:auto;
 opacity:1}
 .project-wrapper.open:before,.project-wrapper.open:after{transform:translate3d(0,0,0)}
-.project-wrapper.open .btn--search-close{top:40px; right:40px; opacity:1}
+.project-wrapper.open .btn--search-close{top:40px; right:50px; opacity:1}
 
-.proj-cols {
-    display: table;
-    width: 80%;
-    height: 80%;
+
+  .proj-cols {
+      display: table;
+      width: 80%;
+      height: 80%;
+      text-align: center;
+  }
+@media screen and (min-width:801px) {
+  .proj-col {
+    display: table-cell;
     text-align: center;
+    vertical-align: middle;
+    line-height: 1em;
+    margin: auto;
+    width: 50%;
+  }
 
 }
-.proj-col {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 1em;
-  margin: auto;
-}
+
 
 
 
