@@ -212,6 +212,7 @@ input.input-search{background:url(../files/search-icon@2x.png) #fff no-repeat 14
 .footer-base a{text-decoration:none}
 .footer-base a:focus,.footer-base a:hover{text-decoration:underline}
 .footer-base .footer__outro{border-top:1px solid #d2d7d3;margin-top:14px;padding-top:4px}
+.counter {font-size: 1px; color:#414141; float:right;}
 
 .txt-serif{font-family:"Merriweather Regular","Times New Roman",serif !important;font-weight:400 !important;font-style:normal !important}
 ol,ul{padding-left:1.5em}ol ol,ol ul,ul ol,ul ul{margin-top:.5em}
