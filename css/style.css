@@ -20,9 +20,9 @@ background-color: #ffffff;
 }
 
 
-body {padding: 18px 0 0px 0;}
+body {padding: 18px 0 0 0;}
 @media (min-width: 801) {
-body {padding: 30px 0 0px 0;}}
+body {padding: 30px 0 0 0;}}
 
 
 .page{padding-top:40px;min-height:820px}
@@ -127,16 +127,6 @@ ol ol {
 }
 
 
-/*               arxiv               */
-
-firstLetter::first-letter {
-  font-size: 1.5em;
-  display: block;
-  float: left;
-  margin-right: 4px;
-}
-
-
 /*             my-profile        */
 
 @media (max-width: 800px) {
@@ -172,11 +162,9 @@ firstLetter::first-letter {
 }
 .my-profile .my-title{
   font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: 400;
   line-height: 1.5;
   display: block;
   padding-bottom: 8px;
-  font-size:16px
   font-weight: normal;
   color: #777777;
 }
@@ -207,7 +195,7 @@ firstLetter::first-letter {
   .my-profile .my-img{
     width:220px;
     padding: 3px;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     line-height: 1;
     border: 1px solid #ddd;
     display: inline-block;
@@ -220,12 +208,9 @@ firstLetter::first-letter {
   }
   .my-profile .my-title{
     font-family: Georgia, "Times New Roman", Times, serif;
-    font-weight: 400;
     line-height: 1.5;
-    color: #222222;
     display: block;
     padding-bottom: 8px;
-    font-size:16px
     font-weight: normal;
     color: #777777;
   }
@@ -239,8 +224,8 @@ firstLetter::first-letter {
 
   .my-profile .my-email{font-size:12px}
   .my-profile .my-tel{font-size:12px}
-    }
-  }
+}
+
 /*            bottom              */
 
 .button {
@@ -296,7 +281,7 @@ top: 2px;
 .timeline .jobTitle .name {
   margin-top: 0;
 	margin-left: 50px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   font-size: 20px;
   font-weight: 300;
 	/*color: #00BCD4;*/
@@ -305,9 +290,9 @@ top: 2px;
 .timeline .jobTitle .position {
   margin-top: 0;
 	margin-left: 50px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   font-size: 15px;
-  /* color: #777777; */
+  color: #666;
 }
 
 .timeline .job-desc {
@@ -333,10 +318,6 @@ margin-left: 18px;
 }
 
 .award_list .item emphasize {
-  /* color: Black; */
-	/* text-shadow: 4px 4px 5px red; */
-	/*background-color: #C8C8C8; */
-	/* text-decoration: underline; */
   border:1px dotted DodgerBlue;
 
 }
