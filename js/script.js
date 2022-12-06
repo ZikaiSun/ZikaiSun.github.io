@@ -128,16 +128,23 @@ function toggleState ( stateOff, stateOn, attrOff, attrOn, expOff, expOn ) {
 }
 
 
-// Actions to fire on click of btnMenu
-btnMenu.on('click', function (e) {
-  e.preventDefault();
-  toggleState('off', 'on', 'Reveal Navigation', 'Close Navigation', 'false', 'true');
-  html.toggleClass('nav-open');
-});
 
+function btnMenuToggle() {
 
+  // Actions to fire on click of btnMenu
+  btnMenu.on('click', function (e) {
+    e.preventDefault();
+    toggleState('off', 'on', 'Reveal Navigation', 'Close Navigation', 'false', 'true');
+    html.toggleClass('nav-open');
+  });
 
+  $(".nav-group").on('click', function (e) {
+          html.removeClass('nav-open');
+  });
 
+}
+
+btnMenuToggle()
 
 
 
