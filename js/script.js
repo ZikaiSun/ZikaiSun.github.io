@@ -139,7 +139,9 @@ function btnMenuToggle() {
   });
 
   $(".nav-group").on('click', function (e) {
-          html.removeClass('nav-open');
+  html.removeClass('nav-open');
+  toggleState('off', 'on', 'Reveal Navigation', 'Close Navigation', 'false', 'true');
+
   });
 
 }
