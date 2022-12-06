@@ -106,8 +106,8 @@
 									<h1 class="my-name"> Zikai Sun </h1>
 									<h1 class="my-name"> (孙梓凯) </h1>
 									<div class="my-title"> Ph.D student @ CUHK</div>
-									<div class="my-email"> zksun[at]link.cuhk.edu.hk</div>
-									<div class="my-tel">(+86)17576038634, (+852)60859397</div>
+									<div class="my-email"> zksun@link.cuhk.edu.hk</div>
+									<div class="my-tel">(+852) 8480 8616</div>
 								</div>
 							</div>
 
@@ -117,7 +117,7 @@
 
             <!-- col2 -->
             <div class="col-xs-12 col-sm-9 resume-info padding-top-condition">
-                <section class="resume-info-section" style="color:#585754;">
+                <section class="resume-info-section bio" style="color:#585754;">
                     <h2 id="Biography">Biography</h2>
 
 						<p> Hey there! I'm Zikai Sun. <!--, born in Nov. 1998. --> I'm now a PhD student at
@@ -144,32 +144,74 @@
 
                     <div class="resume-info-section-block highlight">
 
-											<p>
-											[1] <span style="font-weight: bold; color: black;">Zikai Sun</span>, Zihan Zhang, Thierry Blu <q>An Algebraic Optimization Approach to Image Registration</q>,
-											Proceedings of the 2022 IEEE International Conference on Image Processing (ICIP'22) Bordeaux, France, October 16--19, 2022.
-											<a href="./files/sun2202.pdf">PDF</a>
-											</p>
-			    
-											<p>
-											[2] <span style="font-weight: bold; color: black;">Zikai Sun</span>, Thierry Blu <q>A Nonlinear Steerable Complex Wavelet Decomposition of Images</q>,
-											Proceedings of the Forty-seventh IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP'22), Singapore, May 22--27, 2022.
-											<a href="./files/sun2201.pdf">PDF</a>
-											</p>
 
 
-                        <p>
-                        [3] <span style="font-weight: bold; color: black;">Zikai Sun</span>, Dezhi Peng, Zirui Cai, Zirong Chen, Lianwen Jin <q>Scale Mapping and Dynamic Re-detecting in Dense Head Detection</q>, In 2018 25th IEEE International Conference on Image Processing (ICIP) (pp. 1902 - 1906). IEEE.
-                        <a href="./files/ICIP.pdf">PDF</a>
-                        <!--a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8451653">Paper</a-->
-                        </p>
+<div class="paper-info">
+	<button type="button" class="toggle_icon"> <span> &#10095;</span> </button>
+	<span>
+		<span style="font-weight: bold; color: black;">Zikai Sun</span>, Thierry Blu.
+		"Empowering Networks With Scale and Rotation Equivariance Using A Similarity Convolution",
+		Under review at International Conference Learning Representation 2023 (ICLR).
+		<a href="./papers/iclr.pdf">PDF</a>
+	</span>
+	<div class="content">
+		The translational equivariant nature of CNN is a reason for its great success in the field of computer vision. However, networks do not enjoy more general equivariance properties such as rotation or scaling. This limits the generalization performance of the network. In this paper, we devise a method that provides networks with equivariance with respect to translation, rotation, and scaling simultaneously. We define a convolution-like operation and ensure equivariance based on our proposed scalable Fourier-Argand representation. The method has similar efficiency as a traditional network and hardly introduces any additional learnable parameters, since it does not face the computational issue often occurs in group-convolution operator. We verified the quality of our approach in the image classification task, demonstrating the robustness and the generalization ability to both scaled and rotated inputs.
+	</div>
+</div>
 
-                        <p>
-                        [4] Dezhi Peng*, <span style="font-weight: bold; color: black;">Zikai Sun*</span>, Zirong Chen, Zirui Cai, Lele Xie, Lianwen Jin, <q>Detecting Heads using Feature Refine Net and Cascaded Multi-scale Architecture</q>, In 2018 24th International Conference on Pattern Recognition (ICPR) (pp. 2528 - 2533). IEEE.
-                        <a href="./files/ICPR.pdf">PDF</a>
-                        <!--a href="https://arxiv.org/pdf/1803.09256v2.pdf">Paper</a-->
-                        <br>
-                        (*indicates equal contribution)
-                        </p>
+
+<div class="paper-info">
+	<button type="button" class="toggle_icon"> <span> &#10095;</span> </button>
+	<span>
+		<span style="font-weight: bold; color: black;">Zikai Sun</span>, Zihan Zhang, Thierry Blu. "An Algebraic Optimization Approach to Image Registration", Proceedings of the 2022 IEEE International Conference on Image Processing (ICIP) Bordeaux, France, October 16--19, 2022.
+		<a href="./papers/icip1.pdf">PDF</a>
+	</span>
+	<div class="content">
+		High-speed is an essential requirement for many applications of image registration. However, existing methods are usually time-consuming due to the difficulty of the task. In this paper, different from usual feature-based ideas, we convert the matching problem into an algebraic optimization task. By solving a series of quadratic optimization equations, the underlying deformation (rotation, scaling and shift) between image pairs can be retrieved. This process is extremely fast and can be performed in real-time. Experiments show that our method can achieve good performance at a much lower computation cost. When used to initialize our earlier parametric Local All-Pass (LAP) registration algorithm, the results obtained improve significantly over the state of the art.
+	</div>
+</div>
+
+
+<div class="paper-info">
+	<button type="button" class="toggle_icon"> <span> &#10095;</span> </button>
+	<span>
+		<span style="font-weight: bold; color: black;">Zikai Sun</span>, Thierry Blu “A Nonlinear Steerable Complex Wavelet Decomposition of Images” Proceedings of the Forty-seventh IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Singapore, May 22--27, 2022.
+		<a href="./papers/icassp22.pdf">PDF</a>
+	</span>
+	<div class="content">
+		Signal and image representations that are steerable are essential to capture efficiently directional features. However, those that are successful at achieving directional selectivity usually use too many subbands, resulting in low computational efficiency. In this paper, we propose a two-dimensional nonlinear transform that uses only two subbands to achieve rotation invariance property, and enjoys a mirror reconstruction making it similar to a “tight frame”. The two-subband structure is merged into a unique, concise, complex-valued subband that approximates a Wirtinger gradient which is naturally steerable. Complete steerability, though, is achieved by utilizing the Fourier-Argand representation, which provides a steerable filter able to estimate the amplitude and direction of image features, even in the presence of very high noise. We demonstrate the efficiency of the representation by comparing how it performs in wavelet-based denoising algorithms.
+	</div>
+</div>
+
+
+<div class="paper-info">
+	<button type="button" class="toggle_icon"> <span> &#10095;</span> </button>
+	<span>
+		<span style="font-weight: bold; color: black;">Zikai Sun</span>, Dezhi Peng, Zirui Cai, Zirong Chen, Lianwen Jin <q>Scale Mapping and Dynamic Re-detecting in Dense Head Detection</q>, In 2018 25th IEEE International Conference on Image Processing (ICIP) (pp. 1902 - 1906). IEEE.
+		<a href="./papers/icip0.pdf">PDF</a>
+	</span>
+	<div class="content">
+		Convolutional neural networks (CNNs) have demonstrated a strong ability to extract semantics from images during object detection; however, the extracted semantics are typically have strong scale priors for a specific circumstance. In this paper, we investigate the influence of head scale and contextual information, and then propose a scale-invariant method for head detection. Our method can dynamically detect heads depending on the complexity of the image. It uses an extra feature map to represent the scale information of the spatial relationship, and then uses this feature map for auxiliary detection. Particularly, we exploit several new techniques, including contextual information, scale invariance, and hard example mining. We evaluated our method on three head datasets and achieved state-of-the-art results for the Brainwash dataset, HollywoodHeads dataset, and SCUT-HEAD dataset
+	</div>
+</div>
+
+
+
+<div class="paper-info">
+	<button type="button" class="toggle_icon"> <span> &#10095;</span> </button>
+	<span>
+		Dezhi Peng*, <span style="font-weight: bold; color: black;">Zikai Sun*</span>, Zirong Chen, Zirui Cai, Lele Xie, Lianwen Jin, <q>Detecting Heads using Feature Refine Net and Cascaded Multi-scale Architecture</q>, In 2018 24th International Conference on Pattern Recognition (ICPR) (pp. 2528 - 2533). IEEE.
+		(* indicate co-first author)
+		<a href="./papers/icpr0.pdf">PDF</a>
+	</span>
+	<div class="content">
+		This paper presents a method that can accurately detect heads especially small heads under the indoor scene. To achieve this, we propose a novel method, Feature Refine Net (FRN), and a cascaded multi-scale architecture. FRN exploits the multi-scale hierarchical features created by deep convolu- tional neural networks. The proposed channel weighting method enables FRN to make use of features alternatively and effectively. To improve the performance of small head detection, we propose a cascaded multi-scale architecture which has two detectors. One called global detector is responsible for detecting large objects and acquiring the global distribution information. The other called local detector is designed for small objects detection and makes use of the information provided by global detector. Due to the lack of head detection datasets, we have collected and labeled a new large dataset named SCUT-HEAD which includes 4405 images with 111251 heads annotated. Experiments show that our method has achieved state-of-the-art performance on SCUT-HEAD.
+	</div>
+</div>
+
+
+
+
                     </div>
 
                 </section>
@@ -315,7 +357,7 @@
                     <h2 id="Contact">Contact</h2>
                     <div class="resume-info-section-block">
                       <p>
-                        Phone: +86 17576038634<br>
+                        Phone: +852 84808616<br>
     			E-mail: zksun [at] link.cuhk.edu.hk<br>
                         Location: Rm. 310, Ho Sin-Hang Engineering Building, The Chinese University of Hong Kong, ShaTin, N.T., Hong Kong <br>
                       </p>
@@ -340,7 +382,7 @@
 	</div>
 
 		<p class="footer__outro">
-			© 2019 Zikai Sun
+			© 2022 Zikai Sun
 		</p>
 
 	</div>
@@ -357,6 +399,10 @@
 	<script src="./js/jquery-1.11.2.min.js"></script>
 	<script src="./js/script.js"></script>
 
+	<!-- clicky -->
+	 <script async src="//static.getclicky.com/101389769.js"></script>
+	<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101389769ns.gif" /></p></noscript>
+
 	<script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101184839);</script>
 	<script async src="//static.getclicky.com/js"></script>
 
@@ -369,8 +415,6 @@
 
 	  gtag('config', 'UA-140400441-1');
 	</script>
-
-
 
     <!-- /Javscript -->
 
