@@ -3,6 +3,7 @@
 @import './col.css';
 @import './nav.css';
 @import './resume.css';
+@import './paper_list.css';
 
 
 
@@ -79,9 +80,9 @@ a {
   text-decoration: none;
 }
 
-.resume-info-section a:hover,
-.resume-info-section a:active,
-.resume-info-section a:focus {
+.bio a:hover,
+.bio a:active,
+.bio a:focus {
 	color: #23527c;
 	text-decoration: underline;
 }
@@ -322,7 +323,7 @@ margin-left: 18px;
 
 }
 
-.highlight a{
+.highli/*ght a{
   background-color: #d9ffd4;
   border:1px dotted DodgerBlue
-}
+}*/
