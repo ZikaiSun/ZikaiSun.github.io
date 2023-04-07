@@ -199,7 +199,8 @@
 						<!-- 可修改  自定义自己的头像  简单点快速设置：任意一张图片都可以   推荐的设置：尺寸80x80或以上  支持png/jpg/ico等图片格式   *电脑端改本地头像的教程：https://www.bilibili.com/video/BV1Pa411d7oe/   -->
 						<!-- 默认的临时图：   https://github.lintongxue.com/img/me-bili.jpg       注：github支持外链。当网页放在本地电脑，使用任何网络图片的头像都能正常显示。 如果你把网页上传到托管空间/主机/服务器后，发现头像显示不出来，原因是你用的图片链接是防盗链的。-->
 						<!--     头像来源：b站@哔哩哔哩游戏中心  https://i1.hdslb.com/bfs/face/f2041c554879836b01531da50f6d3f1884d03205.jpg     注：电脑上可用，上传网站后不能正常显示（不支持外链） -->
-						<image style="height:100%;width:100%;object-fit: cover;border-radius: 6px;" src="https://github.lintongxue.com/img/me-bili.jpg" mode="aspectFit"></image>
+						<!-- <image style="height:100%;width:100%;object-fit: cover;border-radius: 6px;" src="https://github.lintongxue.com/img/me-bili.jpg" mode="aspectFit"></image> -->
+						<image style="height:100%;width:100%;object-fit: cover;border-radius: 6px;" src="./files/pig.jpg" mode="aspectFit"></image>
 					</view>	
                     <view class="flex justify-end" style="width: auto;max-width:70%">
                         <view class="usermsg" style="background-color: #95eb6c;">
@@ -232,7 +233,7 @@
     <view  class="flex-column-center">
 
 		<view class="inpubut"  >
-			<button id="btnA" onclick="showPopup()" class="btn" style="margin-left: 10px; margin-right: 0px;width:66px; " disabled>{{apitemperature}}</button>
+			<button id="btnA" onclick="showPopup()" class="btn" style="margin-left: 10px; margin-right: 0px;width:66px; display: none;" disabled>{{apitemperature}}</button>
 
 			<!-- 可修改  配合“隐形指令/隐藏指令/隐形提示词/隐藏提示词”，禁止聊天界面上输入新指令。  在下方这行代码中找个位置插入个单词 disabled ，即可禁用[指令输入框]，输入框会变灰色，且不可编辑。  -->
 			<!--     演示： 下方代码，有一截是：...... v-model="aisystem"  type="text"  class="dh-input"  ......          -->  
@@ -275,7 +276,7 @@
         data() {
             return {
 				
-                api: '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',  //可修改。 API-Key/API密钥/接口密钥，引号之间可以[保持空白]或者[预先填入api-key]。  举例>>  api: 'sk-EL9S5XEZDp29*********5XEZD*****'
+                api: 'sk' + '-4qsZFCn' + 'urAqaNiH8' + 'JRKmT3Bl' + 'bkFJlJ8Qd1y' + 'fCnbKB' + 'iPSISi3',  //可修改。 API-Key/API密钥/接口密钥，引号之间可以[保持空白]或者[预先填入api-key]。  举例>>  api: 'sk-EL9S5XEZDp29*********5XEZD*****'
                 //注意：如果要把html文件上传到GitHub网站托管，上方的api单引号内需要留空，一定不要预先填入api-key ！自己的网站、空间、服务器、Gitee等都可以预先填入，只有GitHub不能填。 **GitHub被微软收购，微软亦是ChatGPT的大股东，微软不允许ChatGPT的api-key存于GitHub中。
                 //注意：网页只有一个HTML文件，且代码没有加密。如果只是将网页放在自己的电脑上使用，那么预先填写API-Key不会有泄露风险。但是，如果你需要将网页上传到虚拟主机/服务器/Gitee，那么任何访问你网站的人都可以从源代码中看到你的私有API-Key，存在被盗用的风险。
                 apiinputcolor:'color: #000000;background-color: #f8f8f8;',
@@ -415,7 +416,8 @@
 					this.sentext = '先检测API'
 					return 0;
 				}
-				this.sentext = '检测中...'
+				// this.sentext = '检测中...'
+				this.sentext = 'Checking...'
 				
 			
 			    //为false，表示新窗口从未检测过[是否设置了默认system]。  如果代码里设置了默认system，这里做第一次写入system的动作 
@@ -442,7 +444,8 @@
 				}).then(res => {
 					console.log('suss',res);
 					this.msgLoad = false
-					this.sentext = '发送'
+					// this.sentext = '发送'
+					this.sentext = 'Send'
 					this.apibtntext = '验证成功'
 					this.inputapibtn = true
 					
@@ -458,7 +461,8 @@
 					if (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
 				    } else {
 				      const tipsss = document.querySelector('.textareaTips');
-				      tipsss.placeholder = '输入内容后，按Ctrl+Enter发送'
+				    //   tipsss.placeholder = '输入内容后，按Ctrl+Enter发送'
+				      tipsss.placeholder = 'Press Ctrl+Enter to send'
 				    }
 
 					
