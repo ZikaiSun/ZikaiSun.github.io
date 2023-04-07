@@ -247,9 +247,9 @@
 
 		</view>
 		
-        <view class="inpubut" style="margin-top: 3px;height: 45px;">
-            <textarea @click="sendMsgok"  @keyup.ctrl.enter.exact="sendMsg();sendMsgok();" v-model="msg"  type="text"  class="dh-input textareaTips" style="height: 40px;min-height: 40px;max-height: 450px;" @confirm="sendMsg()" placeholder="" enterkeyhint="enter" ></textarea>
-			<button @click="sendMsg();sendMsgok();" :disabled="msgLoad" class="btn" style=" line-height: 40px; height: 40px;font-size: 14px;" >{{sentext}}</button> 
+        <view class="inpubut" style="margin-top: 3px; margin-bottom: 30px; height: 55px;">
+            <textarea @click="sendMsgok"  @keyup.ctrl.enter.exact="sendMsg();sendMsgok();" v-model="msg"  type="text"  class="dh-input textareaTips" style="height: 50px; min-height: 50px;max-height: 450px;" @confirm="sendMsg()" placeholder="" enterkeyhint="enter" ></textarea>
+			<button @click="sendMsg();sendMsgok();" :disabled="msgLoad" class="btn" style=" line-height: 50px; height: 50px;font-size: 16px;" >{{sentext}}</button> 
         </view>
 		
 
@@ -527,7 +527,7 @@
 					this.apibtntext = '<< 检测'
 					return 0;
 				}
-                this.sentext = '发送中...'
+                this.sentext = 'Composing ...'
                 this.msgList.push({
                     "msg": this.msg,
                     "my": true
