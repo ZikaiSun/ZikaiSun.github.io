@@ -1,0 +1,179 @@
+/*<!-- 网页部分样式  -->*/
+/*<style>*/
+ body{
+     background-color: #ededed;
+     font-family:Helvetica,Tahoma, Arial,"PingFang SC",STXihei,"Microsoft yahei","WenQuanYi Micro Hei",sans-serif;
+ }
+.sendok{
+    height: 112px;
+}
+.userinfo {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    padding-right: 20px;
+    margin-top: 20px;
+    animation: oneshow 0.8s ease 1;
+}
+.usermsg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 14px;
+    padding: 13px 16px;
+    border-radius: 6px;
+}
+.aiinfo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-left: 20px;
+    margin-top: 20px;
+    animation: oneshow 0.8s ease 1;
+}
+.aimsg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 14px;
+    padding: 13px 16px;
+    border-radius: 6px;
+}
+.chat-img {
+    border-radius: 50%!important;
+    height: 2.3rem;
+    width: 2.3rem;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: #ededed;
+}
+.justify-end {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: right;
+    bottom: 0px;
+    width: 100%;
+}
+.inpubut {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+}
+.dh-input {
+    font-size: 18px;
+    width: 100%;
+    height: 25px;
+    border-radius: 6px;
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-right: 5px;
+    border: 1px solid #DDD;
+    background-color: #f8f8f8;
+}
+.dh-input:disabled{
+    border: 1px solid #DDD;
+    background-color: #F5F5F5;
+    color: #dddddd;
+}
+.dh-input:read-only{
+    border: 1px solid #DDD;
+    background-color: #F5F5F5;
+    color: #dddddd;
+}
+.btn {
+    margin-right: 30px;
+    background-color: #1aad19;
+    border-color: #1aad19;
+    color: #FFF;
+    border-radius: 6px;
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 25px;
+    height: 25px;
+    width:160px;
+    padding: 0 5px;
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+}
+.btn:visited {
+    color: #FFF;
+}
+.btn:hover, .btn:focus {
+    background-color: #25c524;
+    border-color: #25c524;
+    color: #FFF;
+}
+.btn:active, .btn.active, .btn.is-active {
+    background-color: #17a316;
+    border-color: #17a316;
+    color: #8bc220;
+}
+.btn:disabled{
+    border: 1px solid #DDD;
+    background-color: #F5F5F5;
+    color:#1aad19;
+}
+/*</style>*/
+
+
+/*<style>*/
+.dropdown {
+    font-size: 12px;
+    width: 65%;
+    position: absolute;
+    background-color: #f9f9f9;
+    /*min-width: 300px;*/
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    display: none;
+    max-height: 60vh; /* Set a max-height for the dropdown list */
+    overflow-y: auto; /* Enable scrolling when content overflows */
+}
+
+
+.dropdown.active {
+    display: block;
+}
+
+.dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+.option-title {
+    font-weight: bold;
+}
+/*</style>*/
