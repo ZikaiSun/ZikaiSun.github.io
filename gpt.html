@@ -81,7 +81,7 @@
                         @keyup.ctrl.enter.exact="sendMsg();sendMsgOk();"
                         @click="sendMsgOk"
                         class="dh-input textareaTips"
-                        style="height: 50px; min-height: 50px; max-height: 50px;"
+                        style="min-height: 50px; "
                         placeholder=""
                         enterkeyhint="enter"
                 ></textarea>
@@ -167,6 +167,8 @@
                 showDropdown: false,
                 prompts: [],
                 inputValue: '',
+
+                rows: 1,
             }
         },
         computed: {
@@ -177,6 +179,12 @@
             },
         },
         methods: {
+            updateTextareaRows() {
+                // Reset the textarea height to 'auto' to calculate the new scroll height
+                this.$refs.textarea.style.height = 'auto';
+                // Set the textarea height to its scroll height
+                this.$refs.textarea.style.height = `${this.$refs.textarea.scrollHeight}px`;
+            },
 			//按钮：导出对话
 			ExportData(filename,filecontent){
 			  	let content = new Blob([filecontent])	 
@@ -394,7 +402,7 @@
 					this.apibtntext = '<< 检测'
 					return 0;
 				}
-                this.sentext = 'Composing ...'
+                this.sentext = '回答中 ...'
                 this.msgList.push({
                     "msg": this.msg,
                     "my": true
@@ -410,8 +418,7 @@
 				if (this.aisystemhide.trim() != "") {
                     this.msgContent[0] =  {"role": "system", "content": this.aisystemhide.trim() }
                 }
-				
-							
+
 				this.msgContent.push({"role": "user", "content": this.msg })
 				this.chathistory += ('\r\n:::我:::\r\n' + this.msg.replace(/\n/g, "\r\n") + '\r\n')
                 this.msgLoad = true
@@ -503,16 +510,19 @@
 
             // drop-down list
             handleKeyDown(event) {
-                if (this.inputValue === '' && (event.key === ' ' || event.key === '/')) {
+                // if (this.inputValue === '' && (event.key === ' ' || event.key === '/')) {
+                if (this.msg.trim() === '' && (event.key === ' ' || event.key === '/')) {
                     event.preventDefault();
                     this.showDropdown = true;
                 } else {
                     this.showDropdown = false;
                 }
+                this.updateTextareaRows(); // Update textarea height
             },
             selectOption(option) {
                 this.msg = option.content;
                 this.showDropdown = false;
+                this.updateTextareaRows(); // Update textarea height
             },
 
 
@@ -535,6 +545,7 @@
         },
 		mounted() {
         this.entapi();
+        this.updateTextareaRows();
             this.inputValue = this.msg;
 
             // Fetch prompts.md and parse its content
@@ -573,28 +584,28 @@
 	});
 </script>
  
-<script>
-	//指令输入框自动调整高度    *关于输入框高度的上下限的设置，搜索textareaTips找到对应的max-height值
-	var aisystemautoheight = document.querySelector('.textareaAisystem');
-    
-	aisystemautoheight.addEventListener('input', (e) => {
-		aisystemautoheight.style.height = '25px';
-		aisystemautoheight.style.height = e.target.scrollHeight + 'px';
-		
-		//max-height当变量用，储存高度。另一处：指令输入框获取焦点时，恢复此高度。 *以下代码必须置后，否则剪切指令时会有bug
-		if( parseInt(e.target.scrollHeight) > 50){
-			if( parseInt(e.target.scrollHeight) < 240){
-				aisystemautoheight.style.maxHeight = e.target.scrollHeight + 'px';
-			}
-			else{
-				aisystemautoheight.style.maxHeight = '240px'
-			}
-		}
-		else{
-				aisystemautoheight.style.maxHeight = '50px'
-		}
-	});
-</script>
+<!--<script>-->
+<!--	//指令输入框自动调整高度    *关于输入框高度的上下限的设置，搜索textareaTips找到对应的max-height值-->
+<!--	var aisystemautoheight = document.querySelector('.textareaAisystem');-->
+<!--    -->
+<!--	aisystemautoheight.addEventListener('input', (e) => {-->
+<!--		aisystemautoheight.style.height = '25px';-->
+<!--		aisystemautoheight.style.height = e.target.scrollHeight + 'px';-->
+<!--		-->
+<!--		//max-height当变量用，储存高度。另一处：指令输入框获取焦点时，恢复此高度。 *以下代码必须置后，否则剪切指令时会有bug-->
+<!--		if( parseInt(e.target.scrollHeight) > 50){-->
+<!--			if( parseInt(e.target.scrollHeight) < 240){-->
+<!--				aisystemautoheight.style.maxHeight = e.target.scrollHeight + 'px';-->
+<!--			}-->
+<!--			else{-->
+<!--				aisystemautoheight.style.maxHeight = '240px'-->
+<!--			}-->
+<!--		}-->
+<!--		else{-->
+<!--				aisystemautoheight.style.maxHeight = '50px'-->
+<!--		}-->
+<!--	});-->
+<!--</script>-->
  
 <script>
 	//关闭或刷新页面前的提示，防止意外关闭。  电脑端有效
