@@ -63,17 +63,6 @@
     <view  class="flex-column-center">
         <view class="inpubut" style="margin-top: 3px; margin-bottom: 30px; height: 55px;">
             <button id="btnA" onclick="showPopup()" class="btn" style="margin-left: 10px; margin-right: 0px;width:66px; display: none;" disabled>{{apitemperature}}</button>
-<!--                <textarea-->
-<!--                        @click="sendMsgok"-->
-<!--                          @keyup.ctrl.enter.exact="sendMsg();sendMsgok();"-->
-<!--                          v-model="msg"-->
-<!--                          type="text"-->
-<!--                          class="dh-input textareaTips"-->
-<!--                          style="height: 50px; min-height: 50px;max-height: 50px;"-->
-<!--                          @confirm="sendMsg()"-->
-<!--                          placeholder=""-->
-<!--                          enterkeyhint="enter"-->
-<!--                ></textarea>-->
                 <div class="dropdown" :class="{ active: showDropdown }">
                     <a
                             v-for="option in filteredOptions"
@@ -96,7 +85,6 @@
                         placeholder=""
                         enterkeyhint="enter"
                 ></textarea>
-
 
 
             <!--            <custom-input  @click="sendMsgok"  @keyup.ctrl.enter.exact="sendMsg();sendMsgok();" v-model="msg"  type="text"  class="dh-input textareaTips" style="height: 50px; min-height: 50px;max-height: 50px;" @confirm="sendMsg()" placeholder="" enterkeyhint="enter" ></custom-input>-->
@@ -429,7 +417,7 @@
 				this.msg = ""
 				
 				const tipsssheight = document.querySelector('.textareaTips');
-				tipsssheight.style = "height: 40px;min-height: 40px;max-height: 450px;"
+				tipsssheight.style = "height: 50px;min-height: 50px;max-height: 450px;"
 					
 				//temperature参数  如果转换失败或非0.1到2.0的数值，则默认为0.7
 				let btnAValue = parseFloat(document.getElementById("btnA").innerHTML);
@@ -576,15 +564,15 @@
     }).mount('#app')
 </script>
  
-<script>
-	//聊天输入框自动调整高度    *关于输入框高度的上下限的设置，搜索textareaTips找到对应的max-height值
-	var msgautoheight = document.querySelector('.textareaTips');
-    
-	msgautoheight.addEventListener('input', (e) => {
-		msgautoheight.style.height = '40px';
-		msgautoheight.style.height = e.target.scrollHeight + 'px';
-	});
-</script>
+<!--<script>-->
+<!--	//聊天输入框自动调整高度    *关于输入框高度的上下限的设置，搜索textareaTips找到对应的max-height值-->
+<!--	var msgautoheight = document.querySelector('.textareaTips');-->
+<!--    -->
+<!--	msgautoheight.addEventListener('input', (e) => {-->
+<!--		msgautoheight.style.height = '40px';-->
+<!--		msgautoheight.style.height = e.target.scrollHeight + 'px';-->
+<!--	});-->
+<!--</script>-->
  
 <!--<script>-->
 <!--	//指令输入框自动调整高度    *关于输入框高度的上下限的设置，搜索textareaTips找到对应的max-height值-->
@@ -609,13 +597,13 @@
 <!--	});-->
 <!--</script>-->
  
-<script>
-	//关闭或刷新页面前的提示，防止意外关闭。  电脑端有效
-	window.addEventListener('beforeunload', function (e) {
-	    e.preventDefault();
-	    e.returnValue = '提示：继续刷新页面将会丢失对话记录，可取消返回~';
-	});
-</script>
+<!--<script>-->
+<!--	//关闭或刷新页面前的提示，防止意外关闭。  电脑端有效-->
+<!--	window.addEventListener('beforeunload', function (e) {-->
+<!--	    e.preventDefault();-->
+<!--	    e.returnValue = '提示：继续刷新页面将会丢失对话记录，可取消返回~';-->
+<!--	});-->
+<!--</script>-->
 
 <script>
 		function showPopup() {
