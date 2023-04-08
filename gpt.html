@@ -74,17 +74,6 @@
 <!--                          placeholder=""-->
 <!--                          enterkeyhint="enter"-->
 <!--                ></textarea>-->
-                <textarea
-                        ref="textarea"
-                        @keydown="handleKeyDown"
-                        v-model="msg"
-                        @keyup.ctrl.enter.exact="sendMsg();sendMsgOk();"
-                        @click="sendMsgOk"
-                        class="dh-input textareaTips"
-                        style="min-height: 50px; "
-                        placeholder=""
-                        enterkeyhint="enter"
-                ></textarea>
                 <div class="dropdown" :class="{ active: showDropdown }">
                     <a
                             v-for="option in filteredOptions"
@@ -95,6 +84,19 @@
                         <div>{{ option.content }}</div>
                     </a>
                 </div>
+                <textarea
+                        ref="textarea"
+                        @keydown="handleKeyDown"
+                        v-model="msg"
+                        @keyup.ctrl.enter.exact="sendMsg();sendMsgOk();"
+                        @click="sendMsgOk"
+                        @input="updateTextareaRows"
+                        class="dh-input textareaTips"
+                        style="min-height: 50px; "
+                        placeholder=""
+                        enterkeyhint="enter"
+                ></textarea>
+
 
 
             <!--            <custom-input  @click="sendMsgok"  @keyup.ctrl.enter.exact="sendMsg();sendMsgok();" v-model="msg"  type="text"  class="dh-input textareaTips" style="height: 50px; min-height: 50px;max-height: 50px;" @confirm="sendMsg()" placeholder="" enterkeyhint="enter" ></custom-input>-->
