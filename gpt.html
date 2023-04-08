@@ -63,16 +63,6 @@
     <view  class="flex-column-center">
         <view class="inpubut" style="margin-top: 3px; margin-bottom: 30px; height: 55px;">
             <button id="btnA" onclick="showPopup()" class="btn" style="margin-left: 10px; margin-right: 0px;width:66px; display: none;" disabled>{{apitemperature}}</button>
-                <div class="dropdown" :class="{ active: showDropdown }">
-                    <a
-                            v-for="option in filteredOptions"
-                            @click="selectOption(option)"
-                            href="#"
-                    >
-                        <div class="option-title">{{ option.title }}</div>
-                        <div>{{ option.content }}</div>
-                    </a>
-                </div>
                 <textarea
                         ref="textarea"
                         @keydown="handleKeyDown"
@@ -85,6 +75,16 @@
                         placeholder=""
                         enterkeyhint="enter"
                 ></textarea>
+                <div class="dropdown" :class="{ active: showDropdown }">
+                    <a
+                            v-for="option in filteredOptions"
+                            @click="selectOption(option)"
+                            href="#"
+                    >
+                        <div class="option-title">{{ option.title }}</div>
+                        <div style="font-size: 9px;">{{ option.content }}</div>
+                    </a>
+                </div>
 
 
             <!--            <custom-input  @click="sendMsgok"  @keyup.ctrl.enter.exact="sendMsg();sendMsgok();" v-model="msg"  type="text"  class="dh-input textareaTips" style="height: 50px; min-height: 50px;max-height: 50px;" @confirm="sendMsg()" placeholder="" enterkeyhint="enter" ></custom-input>-->
@@ -327,7 +327,9 @@
 				      const tipsss = document.querySelector('.textareaTips');
 				    //   tipsss.placeholder = '输入内容后，按Ctrl+Enter发送'
                     //     tipsss.placeholder = 'Press Ctrl+Enter to send'
-                        tipsss.placeholder = '输入 \' \' 或 \'/\' 以打开模版'
+                    //     tipsss.placeholder = '输入 \' \' 或 \'/\' 以打开模版'
+                        tipsss.placeholder = '如果你不知道问什么，可以输入\'/\'了解模板'
+
 				    }
 
 					
