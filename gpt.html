@@ -323,7 +323,9 @@
 					
 					//检测是否电脑，如果为电脑，提示发送的快捷键
 					if (navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
-				    } else {
+                        const tipsss = document.querySelector('.textareaTips');
+                        tipsss.placeholder = '输入 \' \' 或 \'/\' 以打开模版'
+                    } else {
 				      const tipsss = document.querySelector('.textareaTips');
 				    //   tipsss.placeholder = '输入内容后，按Ctrl+Enter发送'
                     //     tipsss.placeholder = 'Press Ctrl+Enter to send'
