@@ -1,35 +1,13 @@
 <!-- Forked from: https://github.com/lin2025/gpt3.5 -->
 
-<!--	:::如何改代码？:::	 -->
-<!--		小白萌新在编辑代码时搜索“可修改”来查看可以修改的部分，进行个性化定制  -->
-<!--	:::Mac复制网页源码后如何粘贴代码？:::	 -->
-<!--		1.打开“文本编辑”App，菜单选“文件”>“新建”，然后菜单选“格式”>“制作纯文本”。  -->
-<!--		2.粘贴全部HTML代码。 -->
-<!--		3.菜单选“文件”>“存储”，文件名为“index.html”，下拉框“纯文本编码”选“Unicode(UTF-8)”，然后点击存储（保存）。 -->
-<!--	:::Mac如何修改扩展名为html的文件？:::	 -->
-<!--		1.打开“文本编辑”App，菜单选“文件”>“打开”，找到html文件，单击选中，先别打开。 -->
-<!--		2.点击对话框底部的“显示选项”/“选项”，然后打勾选中“忽略多信息文本命令”，现在可以点击“打开”，即可编辑html文件。 -->
-<!--	:::Mac电脑:::	 -->
-<!--		使用[文本编辑APP]修改网页的，保存时有个[纯文本编码]下拉框，选[Unicode(UTF-8)] -->
-<!--	:::Windows电脑:::	 -->
-<!--		使用[记事本]来修改网页的，保存时在[编码]下拉框中选[UTF-8]。扩展名如果是.txt，需要改为.html  另外，编辑代码时，建议在菜单栏的“格式”里关闭掉“自动换行” -->
-<!--	:::关于文件名:::	 -->
-<!--		1.电脑上使用，文件名随意，但扩展名必须是.html  2.如需上传至虚拟主机、服务器、GitHub、Gitee，文件名改为英文，默认主页的文件名为：index.html  -->
-<!--	:::网页显示报错：打开网页/网站后，对话框和部分按钮显示为{{x.msg}}、{{x.msg}}、{{sentext}}... :::	 -->
-<!--		这种情况是因为浏览器版本太低，无论你在使用哪款浏览器，请先升级它   -->
-<!--	:::欢迎来以下评论区留言交流:::	 -->
-<!--		B站：@林同学不姓林  https://space.bilibili.com/3493262545389917    -->
-<!--		抖音：@林同学不姓林    最新更新：林同学的小站 https://lin2025.gitee.io    -->
-
 <html>
 <head>
 <meta charset="UTF-8">
 <!-- 下方这行代码用于屏蔽搜索引擎机器人/爬虫，不想屏蔽的请删除下方这一整行：<meta name="ROBOTS" content="noindex,nofllow"> -->
 <meta name="ROBOTS" content="noindex,nofllow">
-<!-- 可修改 网页标题  *默认为：ChatGPT 3.5-->
-<title>ChatGPT 3.5</title>
+<title>ChatGPT 智能助手</title>
 <!-- 可修改 网页在手机/平板上的显示比例  默认是缩放为80%  *小白不需要改。需要传网页到Github/Gitee/托管空间/主机/服务器的同学，根据自己手机的显示效果进行修改。   *下面这行中initial-scale默认等于0.8   可改成 =0.9 或 =1  -->
-<meta name="viewport" content="width=device-width,initial-scale=0.8,minimum-scale=0.5,maximum-scale=2,user-scalable=no,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=0.5,maximum-scale=2,user-scalable=no,viewport-fit=cover">
 <link rel="shortcut icon" href="https://openai.com/favicon.ico">
 <!-- 可修改 手机端添加到主屏幕时的Logo  默认为ChatGPT的Logo，可改  *小白不需要改。需要传网页到Github/Gitee/托管空间/主机/服务器的同学，才需要设置。   简单点快速设置：任意一张正方形图片。  推荐的设置：尺寸180x180 格式优先考虑.png -->
 <link rel="apple-touch-icon" href="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/chatgpt-icon.png">
@@ -40,153 +18,12 @@
 <!-- 备用：https://unpkg.com/axios@1.3.2/dist/axios.min.js -->
 <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.3.2/axios.min.js"></script>
 
-<!-- 网页部分样式  -->
-<style> 
-	 body{
-	     background-color: #ededed;
-	     font-family:Helvetica,Tahoma, Arial,"PingFang SC",STXihei,"Microsoft yahei","WenQuanYi Micro Hei",sans-serif;
-	}
-	 .sendok{
-	     height: 112px;
-	}
-	 .userinfo {
-	     display: flex;
-	     flex-direction: row-reverse;
-	     align-items: flex-start;
-	     padding-right: 20px;
-	     margin-top: 20px;
-	     animation: oneshow 0.8s ease 1;
-	}
-	 .usermsg {
-	     display: flex;
-	     flex-direction: column;
-	     justify-content: center;
-	     margin-right: 14px;
-	     padding: 13px 16px;
-	     border-radius: 6px;
-	}
-	 .aiinfo {
-	     display: flex;
-	     flex-direction: row;
-	     align-items: flex-start;
-	     margin-left: 20px;
-	     margin-top: 20px;
-	     animation: oneshow 0.8s ease 1;
-	}
-	 .aimsg {
-	     display: flex;
-	     flex-direction: column;
-	     justify-content: center;
-	     margin-left: 14px;
-	     padding: 13px 16px;
-	     border-radius: 6px;
-	}
-	 .chat-img {
-	     border-radius: 50%!important;
-	     height: 2.3rem;
-	     width: 2.3rem;
-	     background-color: #f7f7f7;
-	     display: flex;
-	     flex-direction: row;
-	     justify-content: center;
-	     align-items: center;
-	}
-	 .flex-column-center {
-	     display: flex;
-	     flex-direction: column;
-	     justify-content: center;
-	     align-items: flex-start;
-	     position: fixed;
-	     bottom: 0px;
-	     width: 100%;
-	     background-color: #ededed;
-	}
-	 .justify-end {
-	     display: flex;
-	     flex-direction: row;
-	     justify-content: flex-start;
-	     align-items: right;
-	     bottom: 0px;
-	     width: 100%;
-	}
-	 .inpubut {
-	     display: flex;
-	     flex-direction: row;
-	     justify-content: space-between;
-	     align-items: flex-end;
-	     width: 100%;
-	     height: 30px;
-	     font-size: 14px;
-	}
-	 .dh-input {
-	     font-size: 14px;
-	     width: 100%;
-	     height: 25px;
-	     border-radius: 6px;
-	     padding-left: 10px;
-	     margin-left: 10px;
-	     margin-right: 5px;
-	     border: 1px solid #DDD;
-	     background-color: #f8f8f8;
-	}
-	 .dh-input:disabled{
-	     border: 1px solid #DDD;
-	     background-color: #F5F5F5;
-	     color: #dddddd;
-	}
-	 .dh-input:read-only{
-	     border: 1px solid #DDD;
-	     background-color: #F5F5F5;
-	     color: #dddddd;
-	}
-	 .btn {
-	     margin-right: 30px;
-	     background-color: #1aad19;
-	     border-color: #1aad19;
-	     color: #FFF;
-	     border-radius: 6px;
-	     font-weight: 400;
-	     font-size: 12px;
-	     text-decoration: none;
-	     text-align: center;
-	     line-height: 25px;
-	     height: 25px;
-	     width:160px;
-	     padding: 0 5px;
-	     display: inline-block;
-	     cursor: pointer;
-	     border: none;
-	     -webkit-box-sizing: border-box;
-	     -moz-box-sizing: border-box;
-	     box-sizing: border-box;
-	     -webkit-transition-property: all;
-	     transition-property: all;
-	     -webkit-transition-duration: .3s;
-	     transition-duration: .3s;
-	}
-	 .btn:visited {
-	     color: #FFF;
-	}
-	 .btn:hover, .btn:focus {
-	     background-color: #25c524;
-	     border-color: #25c524;
-	     color: #FFF;
-	}
-	 .btn:active, .btn.active, .btn.is-active {
-	     background-color: #17a316;
-	     border-color: #17a316;
-	     color: #8bc220;
-	}
-	 .btn:disabled{
-	     border: 1px solid #DDD;
-	     background-color: #F5F5F5;
-	     color:#1aad19;
-	}
- </style>
+<link rel="stylesheet" href="./css/gpt.css" media="all">
+
+
 </head>
 
 <body>
-<!-- 可修改 对话内容的字体大小(不影响输入框和按钮的字体大小)  *下面这行中的font-size字体大小默认为15px  可加大或减小 px是单位 改数字即可-->
 <div id="app" style="font-size:15px ; display: flex;flex-flow: column;margin: 1 ;white-space:pre-line; ">
 
     <scroll-view scroll-with-animation scroll-y="true" style="width: 100%;">
@@ -196,10 +33,6 @@
                 <!-- Me -->
                 <view v-if="x.my" class="userinfo">
 					<view class="chat-img">
-						<!-- 可修改  自定义自己的头像  简单点快速设置：任意一张图片都可以   推荐的设置：尺寸80x80或以上  支持png/jpg/ico等图片格式   *电脑端改本地头像的教程：https://www.bilibili.com/video/BV1Pa411d7oe/   -->
-						<!-- 默认的临时图：   https://github.lintongxue.com/img/me-bili.jpg       注：github支持外链。当网页放在本地电脑，使用任何网络图片的头像都能正常显示。 如果你把网页上传到托管空间/主机/服务器后，发现头像显示不出来，原因是你用的图片链接是防盗链的。-->
-						<!--     头像来源：b站@哔哩哔哩游戏中心  https://i1.hdslb.com/bfs/face/f2041c554879836b01531da50f6d3f1884d03205.jpg     注：电脑上可用，上传网站后不能正常显示（不支持外链） -->
-						<!-- <image style="height:100%;width:100%;object-fit: cover;border-radius: 6px;" src="https://github.lintongxue.com/img/me-bili.jpg" mode="aspectFit"></image> -->
 						<image style="height:100%;width:100%;object-fit: cover;border-radius: 6px;" src="./files/pig.jpg" mode="aspectFit"></image>
 					</view>	
                     <view class="flex justify-end" style="width: auto;max-width:70%">
@@ -212,9 +45,6 @@
                 <!-- AI -->
                 <view v-if="!x.my" class="aiinfo">
                     <view class="chat-img">
-						<!-- 可修改  ChatGPT的头像  简单点快速设置：任意一张图片都可以   推荐的设置：尺寸80x80或以上  支持png/jpg/ico等图片格式   *电脑端改头像的教程：https://www.bilibili.com/video/BV1Pa411d7oe/    -->
-						<!-- 默认的临时图  绿色ChatGPT Logo 支持外链   https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/chatgpt-icon.png  -->
-						<!--       备用链接 黑色ChatGPT Logo 支持外链   https://openai.com/favicon.ico  -->
 						<image style="height:100%;width:100%;object-fit: cover;border-radius: 6px" src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/chatgpt-icon.png" mode="aspectFit"></image>
 					</view>	
 					<view class="flex" style="width: auto;max-width:70%">
@@ -231,54 +61,76 @@
 
 
     <view  class="flex-column-center">
-
-		<view class="inpubut"  >
-			<button id="btnA" onclick="showPopup()" class="btn" style="margin-left: 10px; margin-right: 0px;width:66px; display: none;" disabled>{{apitemperature}}</button>
-
-			<!-- 可修改  配合“隐形指令/隐藏指令/隐形提示词/隐藏提示词”，禁止聊天界面上输入新指令。  在下方这行代码中找个位置插入个单词 disabled ，即可禁用[指令输入框]，输入框会变灰色，且不可编辑。  -->
-			<!--     演示： 下方代码，有一截是：...... v-model="aisystem"  type="text"  class="dh-input"  ......          -->  
-			<!--        插入disabled后的效果：...... v-model="aisystem"  disabled  type="text"  class="dh-input"  ...... -->
-   		 	<!-- <textarea @input="inputsetaisystembtn=false;"  @blur="aisystemblur" @focus="aisystemfocus"  v-model="aisystem"  type="text"  class="dh-input textareaAisystem" style="margin-left: 5px; font-size: 12px; height: 25px;min-height: 25px;max-height: 50px;" placeholder="留空或输入指令/提示词" enterkeyhint="enter" @confirm="setaisystem()" ></textarea> -->
-			<!-- <button @click="setaisystem" :disabled="inputsetaisystembtn" class="btn" style="margin-right:5px;width:210px;"  ><< 写入指令</button> -->
-			<!-- <button @click="ExportData(txtname,chathistory)":disabled="inputhistorybtn"   class="btn" >导出对话</button> -->
-
-			<!-- <button   class="btn" style="margin-right: 0px; " disabled>Tokens:{{totaltokens}}</button> -->
-			<!-- <button @click="entapi" :disabled="inputapibtn" class="btn"  >{{apibtntext}}</button> -->
-
-		</view>
-		
         <view class="inpubut" style="margin-top: 3px; margin-bottom: 30px; height: 55px;">
-            <textarea @click="sendMsgok"  @keyup.ctrl.enter.exact="sendMsg();sendMsgok();" v-model="msg"  type="text"  class="dh-input textareaTips" style="height: 50px; min-height: 50px;max-height: 450px;" @confirm="sendMsg()" placeholder="" enterkeyhint="enter" ></textarea>
-			<button @click="sendMsg();sendMsgok();" :disabled="msgLoad" class="btn" style=" line-height: 50px; height: 50px;font-size: 16px;" >{{sentext}}</button> 
-        </view>
-		
+            <button id="btnA" onclick="showPopup()" class="btn" style="margin-left: 10px; margin-right: 0px;width:66px; display: none;" disabled>{{apitemperature}}</button>
+<!--                <textarea-->
+<!--                        @click="sendMsgok"-->
+<!--                          @keyup.ctrl.enter.exact="sendMsg();sendMsgok();"-->
+<!--                          v-model="msg"-->
+<!--                          type="text"-->
+<!--                          class="dh-input textareaTips"-->
+<!--                          style="height: 50px; min-height: 50px;max-height: 50px;"-->
+<!--                          @confirm="sendMsg()"-->
+<!--                          placeholder=""-->
+<!--                          enterkeyhint="enter"-->
+<!--                ></textarea>-->
+                <textarea
+                        ref="textarea"
+                        @keydown="handleKeyDown"
+                        v-model="msg"
+                        @keyup.ctrl.enter.exact="sendMsg();sendMsgOk();"
+                        @click="sendMsgOk"
+                        class="dh-input textareaTips"
+                        style="height: 50px; min-height: 50px; max-height: 50px;"
+                        placeholder=""
+                        enterkeyhint="enter"
+                ></textarea>
+                <div class="dropdown" :class="{ active: showDropdown }">
+                    <a
+                            v-for="option in filteredOptions"
+                            @click="selectOption(option)"
+                            href="#"
+                    >
+                        <div class="option-title">{{ option.title }}</div>
+                        <div>{{ option.content }}</div>
+                    </a>
+                </div>
 
-		
-		<!-- <view class="inpubut" style="margin-bottom: 8px; " >
-		  	<button  @click="clearmessages" :disabled="inputclearbtn"  class="btn" style="margin-left: 10px;margin-right: 5px; width:150px;">清空</button>
-			<button   class="btn" style="margin-right: 0px; " disabled>Tokens:{{totaltokens}}</button>
-		 	<input @change="inputapibtn=false;inputclearbtn=true; inputdeletebtn=true; msgLoad = true;sentext ='重新检测API';apibtntext = '<< 检测';apiinputcolor = 'color: #000000;background-color: #f8f8f8;'":style="apiinputcolor" required v-model="api" type="text"  class="dh-input"  style="margin-left: 5px;font-size: 12px;"  placeholder="API-key粘贴到这里" enterkeyhint="done"/>
-			<button @click="entapi" :disabled="inputapibtn" class="btn" style="margin-right:5px;width:210px;"  >{{apibtntext}}</button>
-			<button @click="deleteonly" :disabled="inputdeletebtn" class="btn" style="margin-right:5px;width:90px;"  >撤销</button>
-			<button @click="deleteresend":disabled="inputdeletebtn"  class="btn"  style="margin-right:5px;width:90px;"   >重问</button>
-			<button @click="readmealert"   class="btn" style="width:90px;" >说明</button>
-		</view> -->
+
+            <!--            <custom-input  @click="sendMsgok"  @keyup.ctrl.enter.exact="sendMsg();sendMsgok();" v-model="msg"  type="text"  class="dh-input textareaTips" style="height: 50px; min-height: 50px;max-height: 50px;" @confirm="sendMsg()" placeholder="" enterkeyhint="enter" ></custom-input>-->
+			<button @click="sendMsg();sendMsgok();" :disabled="msgLoad" class="btn" style=" line-height: 50px; height: 50px;font-size: 16px;" >{{sentext}}</button>
+        </view>
+<!--        <view class="inpubut"  >-->
+<!--             可修改  配合“隐形指令/隐藏指令/隐形提示词/隐藏提示词”，禁止聊天界面上输入新指令。  在下方这行代码中找个位置插入个单词 disabled ，即可禁用[指令输入框]，输入框会变灰色，且不可编辑。  -->
+<!--                 演示： 下方代码，有一截是：...... v-model="aisystem"  type="text"  class="dh-input"  ......          -->
+<!--                    插入disabled后的效果：...... v-model="aisystem"  disabled  type="text"  class="dh-input"  ...... -->
+<!--             <textarea @input="inputsetaisystembtn=false;"  @blur="aisystemblur" @focus="aisystemfocus"  v-model="aisystem"  type="text"  class="dh-input textareaAisystem" style="margin-left: 5px; font-size: 12px; height: 25px;min-height: 25px;max-height: 50px;" placeholder="留空或输入指令/提示词" enterkeyhint="enter" @confirm="setaisystem()" ></textarea> -->
+<!--             <button @click="setaisystem" :disabled="inputsetaisystembtn" class="btn" style="margin-right:5px;width:210px;"  ><< 写入指令</button> -->
+<!--             <button @click="ExportData(txtname,chathistory)":disabled="inputhistorybtn"   class="btn" >导出对话</button> -->
+<!--             <button   class="btn" style="margin-right: 0px; " disabled>Tokens:{{totaltokens}}</button> -->
+<!--             <button @click="entapi" :disabled="inputapibtn" class="btn"  >{{apibtntext}}</button> -->
+<!--        </view>-->
+<!--		<view class="inpubut" style="margin-bottom: 8px; " >-->
+<!--		  	<button  @click="clearmessages" :disabled="inputclearbtn"  class="btn" style="margin-left: 10px;margin-right: 5px; width:150px;">清空</button>-->
+<!--			<button   class="btn" style="margin-right: 0px; " disabled>Tokens:{{totaltokens}}</button>-->
+<!--		 	<input @change="inputapibtn=false;inputclearbtn=true; inputdeletebtn=true; msgLoad = true;sentext ='重新检测API';apibtntext = '<< 检测';apiinputcolor = 'color: #000000;background-color: #f8f8f8;'":style="apiinputcolor" required v-model="api" type="text"  class="dh-input"  style="margin-left: 5px;font-size: 12px;"  placeholder="API-key粘贴到这里" enterkeyhint="done"/>-->
+<!--			<button @click="entapi" :disabled="inputapibtn" class="btn" style="margin-right:5px;width:210px;"  >{{apibtntext}}</button>-->
+<!--			<button @click="deleteonly" :disabled="inputdeletebtn" class="btn" style="margin-right:5px;width:90px;"  >撤销</button>-->
+<!--			<button @click="deleteresend":disabled="inputdeletebtn"  class="btn"  style="margin-right:5px;width:90px;"   >重问</button>-->
+<!--			<button @click="readmealert"   class="btn" style="width:90px;" >说明</button>-->
+<!--		</view>-->
     </view>
 
 </div>
 
 
 <script>
-
-
-    const { createApp } = Vue
-    createApp({
+    // const { createApp } = Vue
+    const { createApp, ref, computed } = Vue;
+    const app = createApp({
         data() {
             return {
-				
-                api: 'sk' + '-4qsZFCn' + 'urAqaNiH8' + 'JRKmT3Bl' + 'bkFJlJ8Qd1y' + 'fCnbKB' + 'iPSISi3',  //可修改。 API-Key/API密钥/接口密钥，引号之间可以[保持空白]或者[预先填入api-key]。  举例>>  api: 'sk-EL9S5XEZDp29*********5XEZD*****'
-                //注意：如果要把html文件上传到GitHub网站托管，上方的api单引号内需要留空，一定不要预先填入api-key ！自己的网站、空间、服务器、Gitee等都可以预先填入，只有GitHub不能填。 **GitHub被微软收购，微软亦是ChatGPT的大股东，微软不允许ChatGPT的api-key存于GitHub中。
-                //注意：网页只有一个HTML文件，且代码没有加密。如果只是将网页放在自己的电脑上使用，那么预先填写API-Key不会有泄露风险。但是，如果你需要将网页上传到虚拟主机/服务器/Gitee，那么任何访问你网站的人都可以从源代码中看到你的私有API-Key，存在被盗用的风险。
+                api: 'sk' + '-4qsZFCn' + 'urAqaNiH8' + 'JRKmT3Bl' + 'bkFJlJ8Qd1y' + 'fCnbKB' + 'iPSISi3',
                 apiinputcolor:'color: #000000;background-color: #f8f8f8;',
                 msgLoad: true,
                 inputapibtn: false,
@@ -295,14 +147,13 @@
                 textareaAisystemHeight: 25,
 				apitemperature: 0.7, //temperature默认0.7
                 msgList: [{
-                    msg: "Hi ~",  //可修改。欢迎语，双引号之间的内容可随意改，只会在网页中显示，不会回传，不属于聊天记录，不属于上下文
+                    msg: "你好！有什么我可以帮助你的吗？",  //可修改。欢迎语，双引号之间的内容可随意改，只会在网页中显示，不会回传，不属于聊天记录，不属于上下文
                     my: false
                 }],
 				ischeckaisystem: false,
 				
 				//下方这行设置aisystem 是设置[默认的指令/提示词/人设]的第一种方法，指令写在单引号内。 如果默认指令写在这里，这个指令会显示在聊天界面的指令输入框中。 如果还设置有第二种隐形指令的话，以隐形指令为准，第一种会被忽略。
                 aisystem: '',   //可修改，不填的话，单引号内留空，即： aisystem: '',		
-				
 				//下方这行设置aisystemhide 是设置[默认的指令/提示词/人设]的第二种方法，指令写在单引号内。 第二种方法是[隐形指令/隐藏指令/隐形提示词/隐藏提示词]的写法。如果默认指令写在这里，这个指令不会显示在聊天界面的指令输入框中，指令是隐形的。 在本代码中搜索“隐形指令”可查看[添加 disabled 来禁止聊天界面上输入新指令]的方法。
 				aisystemhide: '',   //可修改，不填的话，单引号内留空，即： aisystemhide: '',
 				//如果用第二种方法设置了[隐形指令]，那么GPT指令将以这里的[隐形指令]为准，会自动忽略聊天界面上的其他指令（包括空白的指令）。
@@ -310,8 +161,20 @@
                 msgContent : [{"role": "system", "content": "" }] ,
 				msg: "",
                 chathistory: '>>>>>>>>>>>>>>>>>> ChatGPT 聊天记录 >>>>>>>>>>>>>>>>>>\r\n\r\n',
-                txtname:"ChatGPT_History.txt"
+                txtname:"ChatGPT_History.txt",
+
+                // dropdown list
+                showDropdown: false,
+                prompts: [],
+                inputValue: '',
             }
+        },
+        computed: {
+            filteredOptions() {
+                return this.prompts.filter((option) =>
+                    option.title.toLowerCase().includes(this.inputValue.toLowerCase())
+                );
+            },
         },
         methods: {
 			//按钮：导出对话
@@ -416,8 +279,8 @@
 					this.sentext = '先检测API'
 					return 0;
 				}
-				// this.sentext = '检测中...'
-				this.sentext = 'Checking...'
+				this.sentext = '检测中...'
+				// this.sentext = 'Checking...'
 				
 			
 			    //为false，表示新窗口从未检测过[是否设置了默认system]。  如果代码里设置了默认system，这里做第一次写入system的动作 
@@ -435,17 +298,18 @@
 				}
 				
 				
-				//下面这行是检测API-Key时的参数，不是聊天的参数，不要改动   **这里的代码仅支持GPT3.5，不支持GPT4，需要修改模型和增加传入组织识别码的参数。关注林同学的频道，下次更新GPT4的代码。
+				//下面这行是检测API-Key时的参数，不是聊天的参数，不要改动  不支持GPT4，需要修改模型和增加传入组织识别码的参数。关注林同学的频道，下次更新GPT4的代码。
 				// axios.post('https://api.openai.com/v1/chat/completions', {
 				axios.post('https://service-o8rlty48-1317701438.usw.apigw.tencentcs.com/v1/chat/completions', {
 				    messages: [{"role": "user", "content": "hi" }], max_tokens: 30, model: "gpt-3.5-turbo"
+				    // messages: [{"role": "user", "content": "hi" }], max_tokens: 30, model: "gpt-3.5-turbo-0301"
 				}, {
 				    headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + this.api }
 				}).then(res => {
 					console.log('suss',res);
 					this.msgLoad = false
-					// this.sentext = '发送'
-					this.sentext = 'Send'
+					this.sentext = '发送'
+					// this.sentext = 'Send'
 					this.apibtntext = '验证成功'
 					this.inputapibtn = true
 					
@@ -633,8 +497,23 @@
 					this.chathistory  += ('\r\n\r\n>>>>>>>>> 报错弹窗 <<<<<<<<<<<\r\n')
 				})
             },
-			
-			//指令输入框失去焦点时
+
+            // drop-down list
+            handleKeyDown(event) {
+                if (this.inputValue === '' && (event.key === ' ' || event.key === '/')) {
+                    event.preventDefault();
+                    this.showDropdown = true;
+                } else {
+                    this.showDropdown = false;
+                }
+            },
+            selectOption(option) {
+                this.msg = option.content;
+                this.showDropdown = false;
+            },
+
+
+            //指令输入框失去焦点时
 			aisystemblur(){
 				var aisystemautoheight = document.querySelector('.textareaAisystem');
 				aisystemautoheight.style.minHeight = '25px';
@@ -653,7 +532,31 @@
         },
 		mounted() {
         this.entapi();
-		}
+            this.inputValue = this.msg;
+
+            // Fetch prompts.md and parse its content
+            fetch('./files/prompts.md')
+                .then((response) => response.text())
+                .then((data) => {
+                    const lines = data.split('\n');
+                    let currentOption = null;
+
+                    lines.forEach((line) => {
+                        if (line.startsWith('##')) {
+                            if (currentOption) {
+                                this.prompts.push(currentOption);
+                            }
+                            currentOption = { title: line.slice(2).trim(), content: '' };
+                        } else if (currentOption && line.trim()) {
+                            currentOption.content += line.trim() + ' ';
+                        }
+                    });
+
+                    if (currentOption) {
+                        this.prompts.push(currentOption);
+                    }
+                });
+		},
     }).mount('#app')
 </script>
  
