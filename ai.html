@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="ROBOTS" content="noindex,nofllow"> 
-<title>ChatGPT 智能助手</title>
+<title>GPT4 - 答鸭</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=0.5,maximum-scale=2,user-scalable=no,viewport-fit=cover">
 <link rel="shortcut icon" href="https://openai.com/favicon.ico">
 <link rel="apple-touch-icon" href="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/chatgpt-icon.png">
@@ -386,7 +386,7 @@
 						alert("错误提醒\r\n网络错误、网络超时\r\n\r\n关闭弹窗后，您可以选择[重问]、[撤销]来继续之前的对话，注意检查[魔法网络]的状态~")
 					}
 					else {
-						alert("错误提醒\r\n存在多种可能：请求过快、Tokens已达上限（AI记忆满了）、请求超时、网络错误...等\r\n\r\n关闭弹窗后，您可以选择[重问]、[撤销]来尝试继续之前的对话。如果Tokens消耗不多(记忆未满)，大概率是网络问题，推荐先[重问]试试，或检查魔法线路+[重问]。\r\n也可以直接[清空记忆]，开始全新的对话。\r\n\r\n本次错误代码\r\nError Code:" + error.code + "\r\nError Message:" +error.message )
+						alert("错误提醒\r\n存在多种可能：请求过快、Tokens已达上限（AI记忆满了）、请求超时、网络错误...等\r\n\r\n如果Tokens消耗不多(记忆未满)，大概率是网络问题，推荐先[重问]试试。\r\n也可以直接[清空记忆]，开始全新的对话。\r\n\r\n本次错误代码\r\nError Code:" + error.code + "\r\nError Message:" +error.message )
 					}
 
 					this.chathistory  += ('\r\n\r\n>>>>>>>>> 报错弹窗 <<<<<<<<<<<\r\n')
